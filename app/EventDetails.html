@@ -1,0 +1,96 @@
+<!doctype html>
+<html ng-app="eventsApp" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Event Registration</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet" crossorigin="anonymous" />
+  <link href="css/app.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-controller="EventController">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar-main">
+              <ul class="nav navbar-nav">
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <img ng-src="{{event.imageUrl}}" alt="{{event.name}}" class="img-responsive" />
+        <h2>{{event.name}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <div><strong>Date: </strong>{{event.date}}</div>
+        <div><strong>Time: </strong>{{event.time}}</div>
+      </div>
+      <div class="col-lg-4">
+        <div>
+          <strong>Address: </strong> {{event.location.address}}
+          <br /> {{event.location.city}}, {{event.location.province}}
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-lg-12">
+        <h3>Sessions</h3>
+        <div ng-repeat="session in event.sessions" class="row">
+          <div class="col-lg-1 votingWidget well text-center">
+            <div class="votingButton">
+              <span class="glyphicon glyphicon-arrow-up"></span>
+            </div>
+            <div class="votingCount">
+              <span class="badge">0</span>
+            </div>
+            <div class="votingButton">
+              <span class="glyphicon glyphicon-arrow-down"></span>
+            </div>
+          </div>
+          <div class="col-lg-11">
+            <div class="well">
+              <h4>{{session.name}}</h4>
+              <h6 class="creator-name">{{session.creatorName}}</h6>
+              <span>Duration: {{session.duration}}</span>
+              <br />
+              <p>Level: {{session.level}}</p>
+              <span>{{session.abstract}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/EventController.js"></script>
+</body>
+
+</html>
