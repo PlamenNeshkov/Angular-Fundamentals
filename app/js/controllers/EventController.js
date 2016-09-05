@@ -45,5 +45,15 @@
         }
       ]
     };
+
+    $scope.upvoteSession = function (session) {
+      session.upVoteCount += 1;
+    };
+
+    $scope.downvoteSession = function (session) {
+      session.upVoteCount -= 1;
+    };
+
+    $scope.sortorder = "name";
   });
 }());

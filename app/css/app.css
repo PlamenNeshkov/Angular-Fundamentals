@@ -92,3 +92,11 @@ textarea {
 .creator-name {
   margin-top: -10px;
 }
+
+.input-location {
+  margin-bottom: 0.75em;
+}
+
+input.ng-dirty.ng-invalid {
+  background-color: pink;
+}
