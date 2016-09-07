@@ -16,15 +16,17 @@
   <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/filters.js"></script>
+  <script src="js/services/GravatarUrlBuilder.js"></script>
   <script src="js/controllers/EditProfileController.js"></script>
 </head>
 
 <body>
+  <br />
   <div class="container" ng-controller="EditProfileController">
     <form name="profileForm">
       <div class="row">
         <div class="col-lg-3">
-          <img src="/img/profile.jpg" />
+          <img ng-src="{{getGravatarUrl(user.emailAddress)}}" />
         </div>
         <div class="col-lg-3">
           <div class="form-group">
@@ -41,7 +43,7 @@
               <input id="name" type="text" placeholder="Name" ng-model="user.name" class="form-control" />
             </div>
             <div class="form-group">
-              <label for=sudo apt-get install python-serial python-wxgtk2.8 python-pyglet python-numpy cython python-libxml2 python-gobject python-dbus python-psutil python-cairosvg git "emailAddress">Email Address:</label>
+              <label for="emailAddress">Email Address:</label>
               <input id="emailAddress" type="email" placeholder="Email Address" ng-model="user.emailAddress" class="form-control" />
             </div>
           </div>
